@@ -7,7 +7,7 @@ import io.flutter.plugins.GeneratedPluginRegistrant;
 import androidx.annotation.NonNull;
 public class MainActivity extends FlutterActivity {
    
- @Override
+    @Override
     public void configureFlutterEngine(@NonNull FlutterEngine flutterEngine) {
         super.configureFlutterEngine(flutterEngine);
         GeneratedPluginRegistrant.registerWith(flutterEngine);
