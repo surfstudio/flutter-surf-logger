@@ -9,11 +9,11 @@
 
 This package is part of the [SurfGear](https://github.com/surfstudio/SurfGear) toolkit made by [Surf](https://surf.ru).
 
-## About
+## Description
 
 Logger for Dart & Flutter
 
-## Usage
+## Example
 
 Main classes:
 
