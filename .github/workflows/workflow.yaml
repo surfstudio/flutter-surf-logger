@@ -121,4 +121,5 @@ jobs:
         run: |
           cd example
           flutter pub get
-          flutter build ios --release --no-codesign --no-sound-null-safety
+          pod install 
+          flutter build ios --release --no-codesign
