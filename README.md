@@ -1,7 +1,7 @@
 # Surf Logger
 
-[![Build Status](https://shields.io/github/workflow/status/surfstudio/SurfGear/build?logo=github&logoColor=white)](https://github.com/surfstudio/SurfGear/tree/main/packages/surf_logger)
-[![Coverage Status](https://img.shields.io/codecov/c/github/surfstudio/SurfGear?flag=surf_logger&logo=codecov&logoColor=white)](https://codecov.io/gh/surfstudio/SurfGear)
+[![Build Status](https://shields.io/github/workflow/status/surfstudio/SurfGear/build?logo=github&logoColor=white)](https://github.com/surfstudio/flutter-surf-logger)
+[![Coverage Status](https://img.shields.io/codecov/c/github/surfstudio/SurfGear?flag=surf_logger&logo=codecov&logoColor=white)](https://app.codecov.io/gh/surfstudio/flutter-surf-logger)
 [![Pub Version](https://img.shields.io/pub/v/surf_logger?logo=dart&logoColor=white)](https://pub.dev/packages/surf_logger)
 [![Pub Likes](https://badgen.net/pub/likes/surf_logger)](https://pub.dev/packages/surf_logger)
 [![Pub popularity](https://badgen.net/pub/popularity/surf_logger)](https://pub.dev/packages/surf_logger/score)
@@ -11,7 +11,7 @@ This package is part of the [SurfGear](https://github.com/surfstudio/SurfGear) t
 
 ## About
 
-Logger for Dart & Flutter
+Logger for Dart & Flutter.
 
 ## Usage
 
@@ -40,7 +40,7 @@ Add `surf_logger` to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  surf_logger: ^1.0.0
+  surf_logger: ^1.0.1
 ```
 
 You can use both `stable` and `dev` versions of the package listed above in the badges bar.
@@ -51,11 +51,11 @@ All notable changes to this project will be documented in [this file](./CHANGELO
 
 ## Issues
 
-For issues, file directly in the Issues section.
+To report your issues, file directly in the [Issues](https://github.com/surfstudio/flutter-surf-logger/issues) section.
 
 ## Contribute
 
-If you would like to contribute to the package (e.g. by improving the documentation, solving a bug or adding a cool new feature), please review our [contribution guide](../../CONTRIBUTING.md) first and send us your pull request.
+If you would like to contribute to the package (e.g. by improving the documentation, fixing a bug or adding a cool new feature), please read our [contribution guide](./CONTRIBUTING.md) first and send us your pull request.
 
 Your PRs are always welcome.
 

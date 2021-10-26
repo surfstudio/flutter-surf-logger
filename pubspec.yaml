@@ -1,8 +1,8 @@
 name: surf_logger
 version: 1.0.1
 description: "Logger for Dart & Flutter"
-repository: "https://github.com/surfstudio/SurfGear/tree/main/packages/surf_logger"
-issue_tracker: "https://github.com/surfstudio/SurfGear/issues"
+repository: "https://github.com/surfstudio/flutter-surf-logger"
+issue_tracker: "https://github.com/surfstudio/flutter-surf-logger/issues"
 
 dependencies:
   logger: ^1.0.0
