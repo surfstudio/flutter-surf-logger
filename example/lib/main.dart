@@ -29,7 +29,6 @@ class MyApp extends StatelessWidget {
     Logger.d('MyApp constructor');
   }
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     Logger.d('MyApp build');

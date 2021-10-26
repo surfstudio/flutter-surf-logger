@@ -15,25 +15,25 @@
 import 'package:surf_logger/src/const.dart';
 import 'package:surf_logger/src/strategies/log_strategy.dart';
 
-/// Wrapping for logging using various strategies
+/// Wrapping for logging using various strategies.
 class Logger {
   static final _strategies = <Type, LogStrategy>{};
 
-  /// debug
+  /// Debug.
   static void d(String msg, [Exception? error]) {
     _forAllStrategies(
       (strategy) => strategy.log(msg, priorityLogDebug, error),
     );
   }
 
-  /// warn (for expected errors)
+  /// Warn (for expected errors).
   static void w(String msg, [Exception? error]) {
     _forAllStrategies(
       (strategy) => strategy.log(msg, priorityLogWarn, error),
     );
   }
 
-  /// error (for errors)
+  /// Error (for errors).
   static void e(String msg, [Exception? error]) {
     _forAllStrategies(
       (strategy) => strategy.log(msg, priorityLogError, error),

@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/// Set of constants for the logger
+/// Set of constants for the logger.
 
-/// logging priorities
+/// Logging priorities.
 const priorityLogDebug = 1;
 const priorityLogWarn = 2;
 const priorityLogError = 3;

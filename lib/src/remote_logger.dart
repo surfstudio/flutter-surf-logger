@@ -14,8 +14,7 @@
 
 import 'package:surf_logger/src/remote/strategies/remote_log_user_strategy.dart';
 
-/// Wrapper for logging to a remote server
-/// using various strategies
+/// Wrapper for logging to a remote server using various strategies.
 class RemoteLogger {
   static final _strategies = <Type, RemoteUserLogStrategy>{};
 

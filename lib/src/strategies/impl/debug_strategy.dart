@@ -16,7 +16,7 @@ import 'package:logger/logger.dart';
 import 'package:surf_logger/src/const.dart';
 import 'package:surf_logger/src/strategies/log_strategy.dart';
 
-/// Strategy for log output to console
+/// Strategy for log output to console.
 /// * used for local debugging
 class DebugLogStrategy extends LogStrategy {
   final Logger _logger;
