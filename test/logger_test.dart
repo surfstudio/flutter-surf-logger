@@ -90,7 +90,7 @@ void main() {
       );
 
       test(
-        'Works correctly both strategies',
+        'Works correctly with both strategies',
         () {
           Logger.addStrategy(debugStrategy);
           Logger.addStrategy(remoteStrategy);
@@ -114,7 +114,7 @@ void main() {
       );
 
       test(
-        'Works correctly with exceptions',
+        'Works correctly with both strategies when passing exceptions',
         () {
           Logger.addStrategy(debugStrategy);
           Logger.addStrategy(remoteStrategy);

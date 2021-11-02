@@ -74,11 +74,11 @@ void main() {
         strategy = DebugLogStrategy();
 
         expect(
-          () {
-            strategy = DebugLogStrategy();
-          },
+          () => strategy = DebugLogStrategy(),
           returnsNormally,
         );
+
+        expect(strategy, isNotNull);
       },
     );
   });

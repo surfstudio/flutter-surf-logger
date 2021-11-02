@@ -35,7 +35,8 @@ void main() {
       });
 
       test(
-        "Method setUser calls strategy's setUser method with correctly parameters",
+        "Method setUser calls strategy's setUser method with correctly "
+            'parameters and do not call if the strategy is removed',
         () {
           RemoteLogger.setUser(userId, username, email);
           verify(() => strategyMock.setUser(userId, username, email)).called(1);
@@ -47,7 +48,8 @@ void main() {
       );
 
       test(
-        "Method clearUser calls strategy's clearUser method with correctly parameters",
+        "Method clearUser calls strategy's clearUser method with correctly "
+            'parameters and do not call if the strategy is removed',
         () {
           RemoteLogger.clearUser();
           verify(() => strategyMock.clearUser()).called(1);
@@ -59,7 +61,8 @@ void main() {
       );
 
       test(
-        'Methods log, logError, logInfo calls the correct methods of the strategy',
+        'Methods log, logError, logInfo calls the correct methods of the strategy '
+            'and do not calls if the strategy is removed',
         () {
           const message = 'Howdy';
           final exception = Exception('exception');
@@ -87,20 +90,20 @@ void main() {
       );
 
       test(
-        'add method supposed to set an old value to a new one',
+        'add method should set old value to new value',
         () {
-          final strategyMock2 = RemoteUserLogStrategyMock();
+          final secondStrategyMock = RemoteUserLogStrategyMock();
           const message = 'message';
-          RemoteLogger.addStrategy(strategyMock2);
+          RemoteLogger.addStrategy(secondStrategyMock);
 
           RemoteLogger.log(message);
-          verify(() => strategyMock2.log(message));
+          verify(() => secondStrategyMock.log(message));
 
           // This method should remove both strategies.
           RemoteLogger.removeStrategy(strategyMock);
 
           RemoteLogger.log(message);
-          verifyNever(() => strategyMock2.log(message));
+          verifyNever(() => secondStrategyMock.log(message));
         },
       );
     },

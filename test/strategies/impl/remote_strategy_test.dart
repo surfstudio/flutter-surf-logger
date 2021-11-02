@@ -32,8 +32,8 @@ void main() {
     });
 
     test(
-      'Cal method log with 3rd (highest) priority must call or not call correct '
-      'method of the strategy',
+      'Cal method log with 3rd (highest) priority must call correct '
+      'method of the strategy and do not call if the strategy is removed',
       () {
         strategy.log(message, priorityLogError);
         verify(() => userStrategyMock.log(message)).called(1);
@@ -46,8 +46,8 @@ void main() {
     );
 
     test(
-      'Cal method log with 2nd (medium) priority must call or not call correct '
-      'method of the strategy',
+      'Cal method log with 2nd (medium) priority must call correct '
+      'method of the strategy and do not call if the strategy is removed',
       () {
         strategy.log(message, priorityLogWarn);
         verify(() => userStrategyMock.log(message)).called(1);
