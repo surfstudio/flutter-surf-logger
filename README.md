@@ -1,7 +1,7 @@
 # Surf Logger
 
-[![Build Status](https://shields.io/github/workflow/status/surfstudio/SurfGear/build?logo=github&logoColor=white)](https://github.com/surfstudio/flutter-surf-logger)
-[![Coverage Status](https://img.shields.io/codecov/c/github/surfstudio/SurfGear?flag=surf_logger&logo=codecov&logoColor=white)](https://app.codecov.io/gh/surfstudio/flutter-surf-logger)
+[![Build Status](https://shields.io/github/workflow/status/surfstudio/flutter-surf-logger/build?logo=github&logoColor=white)](https://github.com/surfstudio/flutter-surf-logger)
+[![Coverage Status](https://img.shields.io/codecov/c/github/surfstudio/flutter-surf-logger?logo=codecov&logoColor=white)](https://app.codecov.io/gh/surfstudio/flutter-surf-logger)
 [![Pub Version](https://img.shields.io/pub/v/surf_logger?logo=dart&logoColor=white)](https://pub.dev/packages/surf_logger)
 [![Pub Likes](https://badgen.net/pub/likes/surf_logger)](https://pub.dev/packages/surf_logger)
 [![Pub popularity](https://badgen.net/pub/popularity/surf_logger)](https://pub.dev/packages/surf_logger/score)
@@ -33,17 +33,6 @@ You can use either [DebugLogStrategy](./lib/src/strategies/impl/debug_strategy.d
 When adding [RemoteLogStrategy](lib/src/strategies/impl/remote_strategy.dart) to the remote server, all logs are sent above the WARN level.
 
 In order not to pollute Crashlytics we use `Logger # w ()` for the expected errors.
-
-## Installation
-
-Add `surf_logger` to your `pubspec.yaml` file:
-
-```yaml
-dependencies:
-  surf_logger: ^1.0.1
-```
-
-You can use both `stable` and `dev` versions of the package listed above in the badges bar.
 
 ## Changelog
 
