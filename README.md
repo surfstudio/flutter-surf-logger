@@ -34,6 +34,18 @@ When adding [RemoteLogStrategy](lib/src/strategies/impl/remote_strategy.dart) to
 
 In order not to pollute Crashlytics we use `Logger # w ()` for the expected errors.
 
+## Installation
+
+Add `analytics` to your `pubspec.yaml` file:
+
+```yaml
+dependencies:
+  analytics: $currentVersion$
+```
+
+<p>At this moment, the current version of <code>surf-logger</code> is <a href="https://pub.dev/packages/surf_logger"><img style="vertical-align:middle;" src="https://img.shields.io/pub/v/surf_logger.svg" alt="surf_logger version"></a>.</p>
+
+
 ## Changelog
 
 All notable changes to this project will be documented in [this file](./CHANGELOG.md).
