@@ -18,30 +18,37 @@ import 'package:surf_logger/src/remote/strategies/remote_log_user_strategy.dart'
 class RemoteLogger {
   static final _strategies = <Type, RemoteUserLogStrategy>{};
 
+  /// Add user info.
   static void setUser(String id, String username, String email) {
     _forAllStrategies((strategy) => strategy.setUser(id, username, email));
   }
 
+  /// Delete user info.
   static void clearUser() {
     _forAllStrategies((strategy) => strategy.clearUser());
   }
 
+  /// Log message.
   static void log(String message) {
     _forAllStrategies((strategy) => strategy.log(message));
   }
 
+  /// Log error.
   static void logError(Exception error) {
     _forAllStrategies((strategy) => strategy.logError(error));
   }
 
+  /// Log info.
   static void logInfo(String key, Object info) {
     _forAllStrategies((strategy) => strategy.logInfo(key, info));
   }
 
+  /// Add new strategy.
   static void addStrategy(RemoteUserLogStrategy strategy) {
     _strategies[strategy.runtimeType] = strategy;
   }
 
+  /// Remove all strategies.
   static void removeStrategy(RemoteUserLogStrategy strategy) {
     _strategies.remove(strategy.runtimeType);
   }

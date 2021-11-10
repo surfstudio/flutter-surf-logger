@@ -21,6 +21,7 @@ import 'package:surf_logger/src/strategies/log_strategy.dart';
 class DebugLogStrategy extends LogStrategy {
   final Logger _logger;
 
+  /// Create an instance DebugLogStrategy.
   DebugLogStrategy([Logger? logger])
       : _logger = logger ??= Logger(printer: PrettyPrinter(methodCount: 0));
 

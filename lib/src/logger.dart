@@ -40,10 +40,12 @@ class Logger {
     );
   }
 
+  /// Add new strategy.
   static void addStrategy(LogStrategy strategy) {
     _strategies[strategy.runtimeType] = strategy;
   }
 
+  /// Remove all strategies.
   static void removeStrategy(LogStrategy strategy) {
     _strategies.remove(strategy.runtimeType);
   }

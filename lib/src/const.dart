@@ -14,11 +14,20 @@
 
 /// Set of constants for the logger.
 
-/// Logging priorities.
+/// Priority for debug.
 const priorityLogDebug = 1;
+
+/// Priority for warn (for expected errors).
 const priorityLogWarn = 2;
+
+/// Priority for error.
 const priorityLogError = 3;
 
+/// Prefix for  debug.
 const prefixLogDebug = 'DEBUG_INFO';
+
+/// Prefix for warn (expected errors).
 const prefixLogWarn = 'DEBUG_WARN';
+
+/// Prefix for error.
 const prefixLogError = 'DEBUG_ERROR';
