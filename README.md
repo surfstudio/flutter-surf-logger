@@ -18,7 +18,7 @@ Main classes:
 * [Logger](./lib/src/logger.dart)
 * [RemoteLogger](./lib/src/remote_logger.dart)
 
-## Usage
+## Example
 
 [Logger](./lib/src/logger.dart) is used as a singleton. The main methods:
 
