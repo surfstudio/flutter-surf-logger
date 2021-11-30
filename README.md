@@ -9,6 +9,8 @@
 
 This package is part of the [SurfGear](https://github.com/surfstudio/SurfGear) toolkit made by [Surf](https://surf.ru).
 
+[![Surf Logger](https://i.ibb.co/Wn4rtcS/Surf-Logger.png)](https://github.com/surfstudio/SurfGear)
+
 ## Description
 
 Logger for Dart & Flutter.
