@@ -9,18 +9,18 @@
 
 This package is part of the [SurfGear](https://github.com/surfstudio/SurfGear) toolkit made by [Surf](https://surf.ru).
 
-## About
+[![Surf Logger](https://i.ibb.co/Wn4rtcS/Surf-Logger.png)](https://github.com/surfstudio/SurfGear)
+
+## Description
 
 Logger for Dart & Flutter.
-
-## Usage
 
 Main classes:
 
 * [Logger](./lib/src/logger.dart)
 * [RemoteLogger](./lib/src/remote_logger.dart)
 
-## Logger
+## Example
 
 [Logger](./lib/src/logger.dart) is used as a singleton. The main methods:
 
