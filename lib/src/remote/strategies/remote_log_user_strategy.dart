@@ -14,7 +14,6 @@
 
 /// Strategy for sending logs of user to a remote server.
 abstract class RemoteUserLogStrategy {
-
   /// Add user info.
   void setUser(String id, String username, String email);
 
