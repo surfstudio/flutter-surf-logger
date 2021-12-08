@@ -12,7 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+/// Base class for strategy.
 // ignore: one_member_abstracts
 abstract class LogStrategy {
+
+  /// Base method for logging.
   void log(String message, int priority, [Exception? error]);
 }

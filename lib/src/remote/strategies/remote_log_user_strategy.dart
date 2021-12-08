@@ -12,15 +12,21 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/// Strategy for sending logs of user to a remote server
+/// Strategy for sending logs of user to a remote server.
 abstract class RemoteUserLogStrategy {
+
+  /// Add user info.
   void setUser(String id, String username, String email);
 
+  /// Delete user info.
   void clearUser();
 
+  /// Log message.
   void log(String message);
 
+  /// Log error.
   void logError(Exception error);
 
+  /// Log info.
   void logInfo(String key, Object? info);
 }

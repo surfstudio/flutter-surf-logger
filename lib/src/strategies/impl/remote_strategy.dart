@@ -16,9 +16,10 @@ import 'package:surf_logger/src/const.dart';
 import 'package:surf_logger/src/remote_logger.dart';
 import 'package:surf_logger/src/strategies/log_strategy.dart';
 
+/// Min priority.
 const minRemotePriority = priorityLogWarn;
 
-/// Strategy for sending logs to a remote server
+/// Strategy for sending logs to a remote server.
 /// * logs are sent starting from [minRemotePriority]
 class RemoteLogStrategy extends LogStrategy {
   @override
