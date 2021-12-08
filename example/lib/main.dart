@@ -44,6 +44,8 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
+  final String title;
+
   MyHomePage({
     required this.title,
     Key? key,
@@ -51,25 +53,15 @@ class MyHomePage extends StatefulWidget {
     Logger.d('MyHomePage constructor');
   }
 
-  final String title;
-
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  _MyHomePageState() {
-    Logger.d('MyHomePageState constructor');
-  }
-
   int _counter = 0;
 
-  void _incrementCounter() {
-    Logger.d('counter value = $_counter before setState');
-    setState(() {
-      _counter++;
-    });
-    Logger.d('counter value = $_counter after setState');
+  _MyHomePageState() {
+    Logger.d('MyHomePageState constructor');
   }
 
   @override
@@ -105,5 +97,13 @@ class _MyHomePageState extends State<MyHomePage> {
         child: const Icon(Icons.add),
       ),
     );
+  }
+
+  void _incrementCounter() {
+    Logger.d('counter value = $_counter before setState');
+    setState(() {
+      _counter++;
+    });
+    Logger.d('counter value = $_counter after setState');
   }
 }
