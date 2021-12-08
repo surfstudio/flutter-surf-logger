@@ -36,7 +36,7 @@ void main() {
 
       test(
         "Method setUser calls strategy's setUser method with correctly "
-            'parameters and do not call if the strategy is removed',
+        'parameters and do not call if the strategy is removed',
         () {
           RemoteLogger.setUser(userId, username, email);
           verify(() => strategyMock.setUser(userId, username, email)).called(1);
@@ -49,7 +49,7 @@ void main() {
 
       test(
         "Method clearUser calls strategy's clearUser method with correctly "
-            'parameters and do not call if the strategy is removed',
+        'parameters and do not call if the strategy is removed',
         () {
           RemoteLogger.clearUser();
           verify(() => strategyMock.clearUser()).called(1);
@@ -62,7 +62,7 @@ void main() {
 
       test(
         'Methods log, logError, logInfo calls the correct methods of the strategy '
-            'and do not calls if the strategy is removed',
+        'and do not calls if the strategy is removed',
         () {
           const message = 'Howdy';
           final exception = Exception('exception');
