@@ -18,49 +18,70 @@ import 'package:surf_logger/src/const.dart';
 import 'package:surf_logger/src/strategies/impl/debug_strategy.dart';
 import 'package:test/test.dart';
 
-class LoggerMock extends Mock implements Logger {}
+const message = 'simple message';
 
 void main() {
-  group('DebugLogStrategy', () {
+  group('DebugLogStrategy:', () {
     late LoggerMock logger;
     late DebugLogStrategy strategy;
 
-    setUp(() {
-      logger = LoggerMock();
-      strategy = DebugLogStrategy(logger);
-    });
+    setUp(
+      () {
+        logger = LoggerMock();
+        strategy = DebugLogStrategy(logger);
+      },
+    );
 
-    test('log calls appropriate logger method', () {
-      const message = 'simple message';
+    test(
+      'Method log calls appropriate logger method',
+      () {
+        strategy.log(message, priorityLogDebug);
+        verify(() => logger.d(message)).called(1);
 
-      strategy.log(message, priorityLogDebug);
-      verify(() => logger.d(message));
+        strategy.log(message, priorityLogWarn);
+        verify(() => logger.w(message)).called(1);
 
-      strategy.log(message, priorityLogWarn);
-      verify(() => logger.w(message));
+        strategy.log(message, priorityLogError);
+        verify(() => logger.e(message)).called(1);
 
-      strategy.log(message, priorityLogError);
-      verify(() => logger.e(message));
+        strategy.log(message, 100500);
+        verify(() => logger.d(message)).called(1);
+      },
+    );
 
-      strategy.log(message, 100500);
-      verify(() => logger.d(message));
-    });
+    test(
+      'Method log with Exception always calls error logger method',
+      () {
+        final exception = Exception('simple exception message');
 
-    test('log with Exception always calls error logger method', () {
-      const message = 'simple message';
-      final exception = Exception('simple exception message');
+        strategy.log(message, priorityLogDebug, exception);
+        verify(() => logger.e(message, exception)).called(1);
 
-      strategy.log(message, priorityLogDebug, exception);
-      verify(() => logger.e(message, exception));
+        strategy.log(message, priorityLogWarn, exception);
+        verify(() => logger.e(message, exception)).called(1);
 
-      strategy.log(message, priorityLogWarn, exception);
-      verify(() => logger.e(message, exception));
+        strategy.log(message, priorityLogError, exception);
+        verify(() => logger.e(message, exception)).called(1);
 
-      strategy.log(message, priorityLogError, exception);
-      verify(() => logger.e(message, exception));
+        strategy.log(message, 100500, exception);
+        verify(() => logger.e(message, exception)).called(1);
+      },
+    );
 
-      strategy.log(message, 100500, exception);
-      verify(() => logger.e(message, exception));
-    });
+    test(
+      'If you do not pass Logger to strategy, instance will be created normally',
+      () {
+        strategy = DebugLogStrategy();
+
+        expect(
+          () => strategy = DebugLogStrategy(),
+          returnsNormally,
+        );
+
+        expect(strategy, isNotNull);
+      },
+    );
   });
 }
+
+class LoggerMock extends Mock implements Logger {}
