@@ -36,14 +36,14 @@ In order not to pollute Crashlytics we use `Logger # w ()` for the expected erro
 
 ## Installation
 
-Add `surf-logger` to your `pubspec.yaml` file:
+Add `surf_logger` to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  surf-logger: $currentVersion$
+  surf_logger: $currentVersion$
 ```
 
-<p>At this moment, the current version of <code>surf-logger</code> is <a href="https://pub.dev/packages/surf_logger"><img style="vertical-align:middle;" src="https://img.shields.io/pub/v/surf_logger.svg" alt="surf_logger version"></a>.</p>
+<p>At this moment, the current version of <code>surf_logger</code> is <a href="https://pub.dev/packages/surf_logger"><img style="vertical-align:middle;" src="https://img.shields.io/pub/v/surf_logger.svg" alt="surf_logger version"></a>.</p>
 
 
 ## Changelog
