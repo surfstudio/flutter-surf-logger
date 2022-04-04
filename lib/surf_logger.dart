@@ -17,3 +17,4 @@ export 'package:surf_logger/src/remote/strategies/remote_log_user_strategy.dart'
 export 'package:surf_logger/src/remote_logger.dart' show RemoteLogger;
 export 'package:surf_logger/src/strategies/impl/debug_strategy.dart';
 export 'package:surf_logger/src/strategies/impl/remote_strategy.dart';
+export 'package:surf_logger/src/strategies/log_strategy.dart';
