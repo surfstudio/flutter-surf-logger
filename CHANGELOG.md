@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.0
+### Added
+* LogStrategy to public API
+
 ## 1.0.2
 
 * Internal improvements.
