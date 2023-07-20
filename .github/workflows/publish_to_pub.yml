@@ -21,14 +21,16 @@ jobs:
           file_path: ".fvm/fvm_config.json"
 
   analysis:
+    needs: get_fvm_version
     uses: surfstudio/flutter-ci-workflows/.github/workflows/analysis.yml@main
     with:
       flutter-version: ${{ needs.get_fvm_version.outputs.flutter_version }}
 
   testing:
-    needs: analysis
+    needs: [get_fvm_version, analysis]
     uses: surfstudio/flutter-ci-workflows/.github/workflows/testing.yml@main
     secrets:
+      flutter-version: ${{ needs.get_fvm_version.outputs.flutter_version }}
       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
   package-publishing:
