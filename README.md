@@ -13,26 +13,9 @@ This package is part of the [SurfGear](https://github.com/surfstudio/SurfGear) t
 
 ## Description
 
-Logger for Dart & Flutter.
+Surf Logger is a utility that allows for quick and easy configuration of logging for a production-level application.
 
-Main classes:
-
-* [Logger](./lib/src/logger.dart)
-* [RemoteLogger](./lib/src/remote_logger.dart)
-
-## Example
-
-[Logger](./lib/src/logger.dart) is used as a singleton. The main methods:
-
-* .`d` - debug
-* .`w` - warn, for expected error
-* .`e` - error
-
-You can use either [DebugLogStrategy](./lib/src/strategies/impl/debug_strategy.dart) as strategy for [Logger](./lib/src/logger.dart) or [RemoteLogStrategy](./lib/src/strategies/impl/remote_strategy.dart) for [RemoteLogger](./lib/src/remote_logger.dart). Or create your own strategy by implementing [LogStrategy](./lib/src/strategies/log_strategy.dart).
-
-When adding [RemoteLogStrategy](lib/src/strategies/impl/remote_strategy.dart) to the remote server, all logs are sent above the WARN level.
-
-In order not to pollute Crashlytics we use `Logger # w ()` for the expected errors.
+This library does not limit your use of third-party loggers. Instead, it provides a tool for configuring logging within your application.
 
 ## Installation
 
@@ -45,6 +28,32 @@ dependencies:
 
 <p>At this moment, the current version of <code>surf_logger</code> is <a href="https://pub.dev/packages/surf_logger"><img style="vertical-align:middle;" src="https://img.shields.io/pub/v/surf_logger.svg" alt="surf_logger version"></a>.</p>
 
+## Usage
+
+#### Creating your own strategy
+
+You can create your own logging strategy for different needs: logging to your own server, through Firebase, through Sentry, etc.
+
+#### Choosing a strategy for the circumstances
+
+You can configure the logger for the circumstances. For example, for the application flavor:
+
+```dart
+LogWriter setupLogger(Env env) {
+  return Logger.withStrategies({
+    if (env == Env.dev || env == Env.qa) ConsoleLogStrategy(),
+    if (env == Env.client || env == Env.qa) FileLogStrategy(),
+    if (env == Env.prod) ...[
+      FirebaseLogStrategy(),
+      SentryLogStrategy(),
+    ],
+  });
+}
+```
+
+## Migrating from 1.x.x to 2.x.x
+
+TODO
 
 ## Changelog
 
