@@ -17,7 +17,7 @@ import 'package:surf_logger/src/log_writer.dart';
 
 /// Class for instantiating logger.
 ///
-/// WARNING! Do not use this class directly. Prefer using [LogWriter] instead.
+/// WARNING! Do not use this class directly for logging.
 ///
 /// This class provides a way to log messages, exceptions, and warnings using a set of
 /// log strategies. To use this class, you should create an instance of it with a set of
@@ -28,6 +28,9 @@ class Logger implements LogWriter {
 
   /// Initialize logger with strategies.
   Logger.withStrategies(this._strategies);
+
+  /// Initialize logger without strategies.
+  Logger.empty() : _strategies = <LogStrategy>{};
 
   @override
   void e(Exception exception, [StackTrace? stackTrace]) {
