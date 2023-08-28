@@ -34,6 +34,30 @@ dependencies:
 
 You can create your own logging strategy for different needs: logging to your own server, through Firebase, through Sentry, etc.
 
+```dart
+class FirebaseLogStrategy implements LogStrategy {
+  final FirebaseCrashlytics _crashlytics;
+
+  CrashlyticsLogStrategy(this._crashlytics);
+
+  @override
+  void e(Exception exception, [StackTrace? stackTrace]) {
+    _crashlytics.recordError(exception, stackTrace);
+  }
+
+  @override
+  void log(Object message) {
+    _crashlytics.log('$message');
+    print('Message: $message');
+  }
+
+  @override
+  void w(String message, [Exception? exception]) {
+    _crashlytics.log('Warning: $message \n Exception: $exception');
+  }
+}
+```
+
 #### Choosing a strategy for the circumstances
 
 You can configure the logger for the circumstances. For example, for the application flavor:
