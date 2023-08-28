@@ -77,7 +77,27 @@ LogWriter setupLogger(Env env) {
 
 ## Migrating from 1.x.x to 2.x.x
 
-TODO
+1.x.x
+```dart
+void setupLogger() {
+  RemoteLogger.addStrategy(CrashlyticsRemoteLogStrategy());
+  Logger.addStrategy(DebugLogStrategy());
+  Logger.addStrategy(RemoteLogStrategy());
+}
+```
+
+Starting from version 2.0.0, the logger is no longer a singleton. Now, you need to create an instance of the logger. 
+`RemoteLogger` has been removed. Use `LogStrategy` to create any required strategy.
+
+```dart
+LogWriter setupLogger() {
+  return Logger.withStrategies({
+    CrashlyticsRemoteLogStrategy,
+    DebugLogStrategy,
+    RemoteLogStrategy(),
+  });
+}
+```
 
 ## Changelog
 
