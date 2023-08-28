@@ -6,7 +6,7 @@ issue_tracker: "https://github.com/surfstudio/flutter-surf-logger/issues"
 
 dev_dependencies:
   mocktail: ^0.3.0
-  lints: ^2.0.1
+  surf_lint_rules: ^3.0.0
   test: ^1.16.8
 
 environment:
