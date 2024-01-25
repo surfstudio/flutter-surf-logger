@@ -26,7 +26,7 @@ abstract class LogWriter {
   ///
   /// This method is used to log an exception. The optional [stackTrace] parameter
   /// can be used to provide additional information about the exception.
-  void e(Exception exception, [StackTrace? stackTrace]);
+  void e(Object exception, [StackTrace? stackTrace]);
 
   /// Logs a warning message.
   ///

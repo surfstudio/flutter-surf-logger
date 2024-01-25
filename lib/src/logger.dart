@@ -33,7 +33,7 @@ class Logger implements LogWriter {
   Logger.empty() : _strategies = <LogStrategy>{};
 
   @override
-  void e(Exception exception, [StackTrace? stackTrace]) {
+  void e(Object exception, [StackTrace? stackTrace]) {
     forEach((strategy) => strategy.e(exception, stackTrace));
   }
 

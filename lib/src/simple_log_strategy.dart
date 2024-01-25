@@ -3,7 +3,7 @@ import 'package:surf_logger/src/log_strategy.dart';
 /// Simple log strategy for quick start with Surf Logger.
 class SimpleLogStrategy implements LogStrategy {
   @override
-  void e(Exception exception, [StackTrace? stackTrace]) {
+  void e(Object exception, [StackTrace? stackTrace]) {
     print('Exception: $exception \n StackTrace: $stackTrace');
   }
 
