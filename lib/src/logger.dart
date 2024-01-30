@@ -12,45 +12,63 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import 'package:surf_logger/src/const.dart';
-import 'package:surf_logger/src/strategies/log_strategy.dart';
+import 'package:surf_logger/src/log_strategy.dart';
+import 'package:surf_logger/src/log_writer.dart';
 
-/// Wrapping for logging using various strategies.
-class Logger {
-  static final _strategies = <Type, LogStrategy>{};
+/// Class for instantiating logger.
+///
+/// WARNING! Do not use this class directly for logging.
+///
+/// This class provides a way to log messages, exceptions, and warnings using a set of
+/// log strategies. To use this class, you should create an instance of it with a set of
+/// log strategies, and then call the `log`, `e`, and `w` methods to log messages, exceptions,
+/// and warnings, respectively.
+class Logger implements LogWriter {
+  final Set<LogStrategy> _strategies;
 
-  /// Debug.
-  static void d(String msg, [Exception? error]) {
-    _forAllStrategies(
-      (strategy) => strategy.log(msg, priorityLogDebug, error),
-    );
+  /// Initialize logger with strategies.
+  Logger.withStrategies(this._strategies);
+
+  /// Initialize logger without strategies.
+  Logger.empty() : _strategies = <LogStrategy>{};
+
+  @override
+  void e(Object exception, [StackTrace? stackTrace]) {
+    forEach((strategy) => strategy.e(exception, stackTrace));
   }
 
-  /// Warn (for expected errors).
-  static void w(String msg, [Exception? error]) {
-    _forAllStrategies(
-      (strategy) => strategy.log(msg, priorityLogWarn, error),
-    );
+  @override
+  void log(Object message) {
+    forEach((strategy) => strategy.log(message));
   }
 
-  /// Error (for errors).
-  static void e(String msg, [Exception? error]) {
-    _forAllStrategies(
-      (strategy) => strategy.log(msg, priorityLogError, error),
-    );
+  @override
+  void w(String message, [Exception? exception, StackTrace? stackTrace]) {
+    forEach((strategy) => strategy.w(message, exception, stackTrace));
   }
 
-  /// Add new strategy.
-  static void addStrategy(LogStrategy strategy) {
-    _strategies[strategy.runtimeType] = strategy;
+  /// Add strategy to logger.
+  void addStrategy(LogStrategy strategy) {
+    _strategies.add(strategy);
   }
 
-  /// Remove all strategies.
-  static void removeStrategy(LogStrategy strategy) {
-    _strategies.remove(strategy.runtimeType);
+  /// Remove strategy from logger.
+  void removeStrategy(LogStrategy strategy) {
+    _strategies.remove(strategy);
   }
 
-  static void _forAllStrategies(Function(LogStrategy) action) {
-    _strategies.values.forEach(action);
+  /// Remove all strategies from logger.
+  void clearStrategies() {
+    _strategies.clear();
+  }
+
+  /// Iterate over all strategies.
+  void forEach(void Function(LogStrategy strategy) action) {
+    _strategies.forEach(action);
+  }
+
+  /// Check if a strategy is contained in the logger.
+  bool contains(LogStrategy strategy) {
+    return _strategies.contains(strategy);
   }
 }
