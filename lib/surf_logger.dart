@@ -12,9 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-export 'package:surf_logger/src/logger.dart' show Logger;
-export 'package:surf_logger/src/remote/strategies/remote_log_user_strategy.dart';
-export 'package:surf_logger/src/remote_logger.dart' show RemoteLogger;
-export 'package:surf_logger/src/strategies/impl/debug_strategy.dart';
-export 'package:surf_logger/src/strategies/impl/remote_strategy.dart';
-export 'package:surf_logger/src/strategies/log_strategy.dart';
+export 'package:surf_logger/src/log_strategy.dart';
+export 'package:surf_logger/src/log_writer.dart';
+export 'package:surf_logger/src/logger.dart';
+export 'package:surf_logger/src/simple_log_strategy.dart';

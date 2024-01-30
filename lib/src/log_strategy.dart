@@ -12,24 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import 'package:surf_logger/src/const.dart';
-import 'package:surf_logger/src/remote_logger.dart';
-import 'package:surf_logger/src/strategies/log_strategy.dart';
+import 'package:surf_logger/src/log_writer.dart';
 
-/// Min priority.
-const minRemotePriority = priorityLogWarn;
-
-/// Strategy for sending logs to a remote server.
-/// * logs are sent starting from [minRemotePriority]
-class RemoteLogStrategy extends LogStrategy {
-  @override
-  void log(String message, int priority, [Exception? error]) {
-    if (priority < minRemotePriority) return;
-
-    RemoteLogger.log(message);
-
-    if (error != null) {
-      RemoteLogger.logError(error);
-    }
-  }
-}
+/// Base class for log strategies.
+///
+/// This class is an abstract base class for log strategies. A log strategy is a class
+/// that provides a specific way of logging messages, exceptions, and warnings. To create
+/// a custom log strategy, you should extend this class and implement the `log`, `e`, and `w`
+/// methods.
+abstract class LogStrategy extends LogWriter {}
