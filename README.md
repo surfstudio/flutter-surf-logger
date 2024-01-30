@@ -78,11 +78,11 @@ Please note that `Logger` is a class for configuration, while `LogWriter` is for
 only to the necessary methods for logging, namely `log`, `e`, and `w`.
 
 For instance, the following methods will be available to an instance of `LogWriter`:
-![logger_writer.png](docs/images/logger_writer.png)
+![logger_writer.png](doc/images/logger_writer.png)
 
 And an instance of `Logger` will have configuration management methods available. It's important to avoid using 
 this class for other purposes, as it could potentially disrupt the configuration.
-![logger.png](docs/images/logger.png)
+![logger.png](doc/images/logger.png)
 
 ## Migrating from 1.x.x to 2.x.x
 
