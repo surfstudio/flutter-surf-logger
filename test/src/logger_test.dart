@@ -39,10 +39,11 @@ void main() {
       test('logs a warning', () {
         final message = 'Test warning message';
         final exception = Exception('Test exception');
+        final stackTrace = StackTrace.current;
 
-        logger.w(message, exception);
+        logger.w(message, exception, stackTrace);
 
-        verify(() => strategyMock.w(message, exception)).called(1);
+        verify(() => strategyMock.w(message, exception, stackTrace)).called(1);
       });
     });
 

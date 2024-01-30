@@ -30,7 +30,7 @@ abstract class LogWriter {
 
   /// Logs a warning message.
   ///
-  /// This method is used to log a warning message. The optional [exception] parameter
-  /// can be used to provide additional information about the warning.
-  void w(String message, [Exception? exception]);
+  /// This method is used to log a warning message. The optional [exception] and [stackTrace]
+  /// parameters can be used to provide additional information about the warning.
+  void w(String message, [Exception? exception, StackTrace? stackTrace]);
 }

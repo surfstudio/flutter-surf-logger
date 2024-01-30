@@ -43,8 +43,8 @@ class Logger implements LogWriter {
   }
 
   @override
-  void w(String message, [Exception? exception]) {
-    forEach((strategy) => strategy.w(message, exception));
+  void w(String message, [Exception? exception, StackTrace? stackTrace]) {
+    forEach((strategy) => strategy.w(message, exception, stackTrace));
   }
 
   /// Add strategy to logger.

@@ -13,7 +13,7 @@ class SimpleLogStrategy implements LogStrategy {
   }
 
   @override
-  void w(String message, [Exception? exception]) {
+  void w(String message, [Exception? exception, StackTrace? stackTrace]) {
     print('Warning: $message \n Exception: $exception');
   }
 }
