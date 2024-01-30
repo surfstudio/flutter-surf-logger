@@ -27,17 +27,19 @@ jobs:
       flutter-version: ${{ needs.get_fvm_version.outputs.flutter_version }}
 
   testing:
-    needs: [get_fvm_version, analysis]
+    needs: [analysis, get_fvm_version]
     uses: surfstudio/flutter-ci-workflows/.github/workflows/testing.yml@main
-    secrets:
+    with:
       flutter-version: ${{ needs.get_fvm_version.outputs.flutter_version }}
+    secrets:
       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
   package-publishing:
-    needs: [ analysis, testing ]
+    needs: [analysis, testing, get_fvm_version]
     uses: surfstudio/flutter-ci-workflows/.github/workflows/publish_to_pub.yml@main
     with:
-      PANA_TOTAL: '100'
+      flutter-version: ${{ needs.get_fvm_version.outputs.flutter_version }}
+      PANA_TOTAL: "100"
     secrets:
       PUB_CREDENTIAL_JSON: ${{ secrets.SURF_PUB_CREDENTIAL_JSON }}
       PUB_OAUTH_ACCESS_TOKEN: ${{ secrets.SURF_PUB_OAUTH_ACCESS_TOKEN }}
