@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:surf_logger/src/log_strategy.dart';
 
 /// Simple log strategy for quick start with Surf Logger.

@@ -21,7 +21,7 @@ void main() {
       });
 
       test('logs a message', () {
-        final message = 'Test log message';
+        const message = 'Test log message';
         logger.log(message);
 
         verify(() => strategyMock.log(message)).called(1);
@@ -37,7 +37,7 @@ void main() {
       });
 
       test('logs a warning', () {
-        final message = 'Test warning message';
+        const message = 'Test warning message';
         final exception = Exception('Test exception');
         final stackTrace = StackTrace.current;
 
@@ -59,7 +59,7 @@ void main() {
       });
 
       test('logs a message for every strategy', () {
-        final message = 'Test log message';
+        const message = 'Test log message';
         logger.log(message);
 
         verify(() => strategyMock1.log(message)).called(1);
@@ -83,24 +83,27 @@ void main() {
       });
 
       test('remove strategy correctly', () {
-        logger.addStrategy(strategyMock1);
-        logger.removeStrategy(strategyMock1);
+        logger
+          ..addStrategy(strategyMock1)
+          ..removeStrategy(strategyMock1);
 
         expect(logger.contains(strategyMock1), isFalse);
       });
 
       test('clear strategies correctly', () {
-        logger.addStrategy(strategyMock1);
-        logger.addStrategy(strategyMock2);
-        logger.clearStrategies();
+        logger
+          ..addStrategy(strategyMock1)
+          ..addStrategy(strategyMock2)
+          ..clearStrategies();
 
         expect(logger.contains(strategyMock1), isFalse);
         expect(logger.contains(strategyMock2), isFalse);
       });
 
       test('can add some strategies with same type', () {
-        logger.addStrategy(strategyMock1);
-        logger.addStrategy(strategyMock2);
+        logger
+          ..addStrategy(strategyMock1)
+          ..addStrategy(strategyMock2);
 
         expect(logger.contains(strategyMock1), isTrue);
         expect(logger.contains(strategyMock2), isTrue);

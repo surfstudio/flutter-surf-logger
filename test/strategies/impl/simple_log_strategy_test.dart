@@ -36,7 +36,7 @@ void main() {
     });
 
     test('Log method should print the message', () {
-      final message = 'Test log message';
+      const message = 'Test log message';
 
       expect(
         () => strategy.log(message),
@@ -45,7 +45,7 @@ void main() {
     });
 
     test('Warning method should print warning and exception', () {
-      final message = 'Test warning message';
+      const message = 'Test warning message';
       final exception = Exception('Test exception');
 
       expect(
