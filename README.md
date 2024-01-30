@@ -34,6 +34,30 @@ dependencies:
 
 You can create your own logging strategy for different needs: logging to your own server, through Firebase, through Sentry, etc.
 
+```dart
+class FirebaseLogStrategy implements LogStrategy {
+  final FirebaseCrashlytics _crashlytics;
+
+  CrashlyticsLogStrategy(this._crashlytics);
+
+  @override
+  void e(Exception exception, [StackTrace? stackTrace]) {
+    _crashlytics.recordError(exception, stackTrace);
+  }
+
+  @override
+  void log(Object message) {
+    _crashlytics.log('$message');
+    print('Message: $message');
+  }
+
+  @override
+  void w(String message, [Exception? exception]) {
+    _crashlytics.log('Warning: $message \n Exception: $exception');
+  }
+}
+```
+
 #### Choosing a strategy for the circumstances
 
 You can configure the logger for the circumstances. For example, for the application flavor:
@@ -50,10 +74,63 @@ LogWriter setupLogger(Env env) {
   });
 }
 ```
+Please note that `Logger` is a class for configuration, while `LogWriter` is for usage. This way, we provide access 
+only to the necessary methods for logging, namely `log`, `e`, and `w`.
+
+For instance, the following methods will be available to an instance of `LogWriter`:
+![logger_writer.png](docs/images/logger_writer.png)
+
+And an instance of `Logger` will have configuration management methods available. It's important to avoid using 
+this class for other purposes, as it could potentially disrupt the configuration.
+![logger.png](docs/images/logger.png)
 
 ## Migrating from 1.x.x to 2.x.x
 
-TODO
+1.x.x
+```dart
+void setupLogger() {
+  RemoteLogger.addStrategy(CrashlyticsRemoteLogStrategy());
+  Logger.addStrategy(DebugLogStrategy());
+  Logger.addStrategy(RemoteLogStrategy());
+}
+```
+
+Starting from version 2.0.0, the logger is no longer a singleton. Now, you need to create an instance of the logger. 
+`RemoteLogger` has been removed. Use `LogStrategy` to create any required strategy.
+
+```dart
+LogWriter setupLogger() {
+  return Logger.withStrategies({
+    CrashlyticsRemoteLogStrategy,
+    DebugLogStrategy,
+    RemoteLogStrategy(),
+  });
+}
+```
+
+## Class descriptions
+
+**LogWriter** 
+
+This interface defines a set of methods for logging messages, exceptions, and warnings.
+Classes that implement this interface provide the actual logging functionality.
+
+**Logger**
+
+This class provides a way to log messages, exceptions, and warnings using a set of log strategies. To use this class, 
+you should create an instance of it with a set of log strategies, and then call the `log`, `e`, and `w` methods to 
+log messages, exceptions, and warnings, respectively. Class for only instantiating logger.
+
+**LogStrategy**
+
+Base class for log strategies.
+This class is an abstract base class for log strategies. A log strategy is a class that provides a specific way of 
+logging messages, exceptions, and warnings. To create a custom log strategy, you should extend this class and 
+implement the `log`, `e`, and `w` methods.
+
+**SimpleLogStrategy**
+
+Simple log strategy for quick start with Surf Logger.
 
 ## Changelog
 

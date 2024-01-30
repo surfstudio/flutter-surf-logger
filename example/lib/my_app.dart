@@ -12,19 +12,32 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import 'package:example/my_app.dart';
+import 'package:example/pages/counter_page.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:surf_logger/surf_logger.dart';
 
-/// Starting from version 2.0.0, the logger is no longer a singleton.
-/// Therefore, it needs to be passed as a dependency or made global.
-void main() {
-  final logger = _setupLogger();
+///
+class MyApp extends StatelessWidget {
+  final LogWriter logger;
 
-  runApp(MyApp(logger: logger));
-}
+  MyApp({required this.logger, super.key}) {
+    logger.log('MyApp constructor');
+  }
 
-LogWriter _setupLogger() {
-  /// Simple log strategy for quick start with Surf Logger.
-  return Logger.withStrategies({SimpleLogStrategy()});
+  @override
+  Widget build(BuildContext context) {
+    logger.log('MyApp build');
+
+    return Provider.value(
+      value: logger,
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: const CounterPage(title: 'Flutter Demo Home Page'),
+      ),
+    );
+  }
 }
