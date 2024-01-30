@@ -28,7 +28,7 @@ dependencies:
 
 <p>At this moment, the current version of <code>surf_logger</code> is <a href="https://pub.dev/packages/surf_logger"><img style="vertical-align:middle;" src="https://img.shields.io/pub/v/surf_logger.svg" alt="surf_logger version"></a>.</p>
 
-## Usage
+## Example
 
 #### Creating your own strategy
 
