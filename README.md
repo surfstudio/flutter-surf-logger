@@ -30,7 +30,7 @@ dependencies:
 
 ## Example
 
-#### Creating your own strategy
+### Creating your own strategy
 
 You can create your own logging strategy for different needs: logging to your own server, through Firebase, through Sentry, etc.
 
@@ -58,7 +58,7 @@ class FirebaseLogStrategy implements LogStrategy {
 }
 ```
 
-#### Choosing a strategy for the circumstances
+### Choosing a strategy for the circumstances
 
 You can configure the logger for the circumstances. For example, for the application flavor:
 
@@ -75,8 +75,7 @@ LogWriter setupLogger(Env env) {
 }
 ```
 
-Please note that `Logger` is a class for configuration, while `LogWriter` is for usage. This way, we provide access 
-only to the necessary methods for logging, namely `log`, `e`, and `w`.
+Please note that `Logger` is a class for configuration, while `LogWriter` is for usage. This way, we provide access only to the necessary methods for logging, namely `log`, `e`, and `w`.
 
 For instance, the following methods will be available to an instance of `LogWriter`:
 
@@ -90,8 +89,7 @@ void main() {
 }
 ```
 
-And an instance of `Logger` will have configuration management methods available. It's important to avoid using 
-this class for other purposes, as it could potentially disrupt the configuration.
+And an instance of `Logger` will have configuration management methods available. It's important to avoid using this class for other purposes, as it could potentially disrupt the configuration.
 
 ```dart
 void main() {
@@ -118,7 +116,7 @@ void setupLogger() {
 }
 ```
 
-Starting from version 2.0.0, the logger is no longer a singleton. Now, you need to create an instance of the logger. 
+Starting from version 2.0.0, the logger is no longer a singleton. Now, you need to create an instance of the logger.
 `RemoteLogger` has been removed. Use `LogStrategy` to create any required strategy.
 
 ```dart
