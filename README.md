@@ -14,10 +14,6 @@ Made by [Surf 🏄‍♂️🏄‍♂️🏄‍♂️](https://surf.dev/)
 [![Pub popularity](https://badgen.net/pub/popularity/surf_logger)](https://pub.dev/packages/surf_logger/score)
 ![Flutter Platform](https://badgen.net/pub/flutter-platform/surf_logger)
 
-This package is part of the [SurfGear](https://github.com/surfstudio/SurfGear) toolkit made by [Surf](https://surf.ru).
-
-[![Surf Logger](https://i.ibb.co/Wn4rtcS/Surf-Logger.png)](https://github.com/surfstudio/SurfGear)
-
 ## Overview
 
 Surf Logger is a utility that allows for quick and easy configuration of logging for a production-level application.
