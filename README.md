@@ -1,15 +1,18 @@
 # Surf Logger
 
-[![Build Status](https://shields.io/github/actions/workflow/status/surfstudio/flutter-surf-logger/main.yml?logo=github&logoColor=white)](https://github.com/surfstudio/flutter-surf-logger)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/surfstudio/flutter-open-source/blob/887525c23f4d57a2d96fc2e6a31e15d1e29d1787/assets/logo_white.png">
+  <img alt="Shows an illustrated sun in light color mode and a moon with stars in dark color mode." src="https://github.com/surfstudio/flutter-open-source/blob/887525c23f4d57a2d96fc2e6a31e15d1e29d1787/assets/logo_black.png" width ="200">
+</picture>
+
+Made by [Surf 🏄‍♂️🏄‍♂️🏄‍♂️](https://surf.dev)
+
+[![Build Status](https://shields.io/github/actions/workflow/status/surfstudio/flutter-surf-logger/on_pull_request.yml?logo=github&logoColor=white)](https://github.com/surfstudio/flutter-surf-logger)
 [![Coverage Status](https://img.shields.io/codecov/c/github/surfstudio/flutter-surf-logger?logo=codecov&logoColor=white)](https://app.codecov.io/gh/surfstudio/flutter-surf-logger)
 [![Pub Version](https://img.shields.io/pub/v/surf_logger?logo=dart&logoColor=white)](https://pub.dev/packages/surf_logger)
 [![Pub Likes](https://badgen.net/pub/likes/surf_logger)](https://pub.dev/packages/surf_logger)
 [![Pub popularity](https://badgen.net/pub/popularity/surf_logger)](https://pub.dev/packages/surf_logger/score)
 ![Flutter Platform](https://badgen.net/pub/flutter-platform/surf_logger)
-
-This package is part of the [SurfGear](https://github.com/surfstudio/SurfGear) toolkit made by [Surf](https://surf.ru).
-
-[![Surf Logger](https://i.ibb.co/Wn4rtcS/Surf-Logger.png)](https://github.com/surfstudio/SurfGear)
 
 ## Overview
 
