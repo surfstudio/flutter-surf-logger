@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.1
+
+* Rebranding
+
 ## 2.0.0
 
 * **BREAKING:** You'll need to migrate your code.
@@ -12,6 +16,7 @@
 ## 1.1.0
 
 ### Added
+
 * LogStrategy to public API
 
 ## 1.0.2
