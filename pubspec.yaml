@@ -1,5 +1,5 @@
 name: surf_logger
-version: 2.0.1
+version: 2.0.2
 description: "Production-level logger for Dart & Flutter"
 repository: "https://github.com/surfstudio/flutter-surf-logger"
 issue_tracker: "https://github.com/surfstudio/flutter-surf-logger/issues"

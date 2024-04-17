@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.2
+
+* Correct logo position in readme
+
 ## 2.0.1
 
 * Rebranding
